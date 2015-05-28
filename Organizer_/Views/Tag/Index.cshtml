@@ -1,0 +1,36 @@
+﻿@model  IEnumerable<Organizer_Domain.EntityModel.Tag>
+
+@{
+    ViewBag.Title = "Теги";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@ViewBag.Title</h2>
+<p>
+    <a class="btn btn-default" href="@Url.Action("CreateTag", "Tag")">Додати</a> |
+ 
+    <a class="btn btn-default" href="@Url.Action("Index", "Notice")">Повернутись до нотаток</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a class="btn btn-default" href="@Url.Action("UpdateTag", "Tag", new { id = item.TagId })">Змінити</a>
+          
+                <a class="btn btn-default" href="@Url.Action("DeleteTag", "Tag", new { id = item.TagId })">Видалити</a>
+ 
+            </td>
+        </tr>
+    }
+</table> 

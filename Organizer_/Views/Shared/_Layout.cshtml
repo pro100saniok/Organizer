@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Органайзер </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <meta name="description" content="The description of my page" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Органайзер", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Головна", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Завдання", "Index", "Task")</li>
+                    <li>@Html.ActionLink("Контакти", "Index", "Contacts")</li>
+                    <li>@Html.ActionLink("Нотатки", "Index", "Notice")</li>
+                    <li>@Html.ActionLink("Про програму", "About", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Органайзер</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript">
+        //$('.form_datetime').datetimepicker({
+        //   // language:  'ua',
+        //    weekStart: 1,
+        //    todayBtn:  1,
+        //    autoclose: 1,
+        //    todayHighlight: 1,
+        //    startView: 2,
+        //    forceParse: 0,
+        //    showMeridian: 1
+        //});
+        $(document).ready(function(){ 
+        $(".form_datetime").datetimepicker({
+        //    language: 'ua',
+            //format: 'yyyy-mm-dd hh:ii',
+            autoclose: true,
+            todayBtn: true,
+            format: 'yyyy-mm-dd hh:ii',
+            startDate: new Date()
+        });
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

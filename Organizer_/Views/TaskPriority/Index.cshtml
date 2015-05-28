@@ -1,0 +1,33 @@
+﻿@model  IEnumerable<Organizer_Domain.EntityModel.TaskPriority>
+
+@{
+    ViewBag.Title = "Групи важливості";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@ViewBag.Title</h2>
+<p>
+    <a class="btn btn-default" href="@Url.Action("CreateTaskPriority", "TaskPriority")">Додати</a> |
+    <a class="btn btn-default" href="@Url.Action("Index", "Task")">Повернутись до завдань</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a class="btn btn-default" href="@Url.Action("UpdateTaskPriority", "TaskPriority", new { id = item.TaskPriorityId })">Змінити</a>
+                <a class="btn btn-default" href="@Url.Action("DeleteTaskPriority", "TaskPriority", new { id = item.TaskPriorityId })">Видалити</a>
+        </td>
+        </tr>
+    }
+</table> 

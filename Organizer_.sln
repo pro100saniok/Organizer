@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizer_Web", "Organizer_\Organizer_Web.csproj", "{CFA3D4F3-543A-4EB7-8A4B-A2237F65784B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizer_Domain", "Organizer_Domain\Organizer_Domain.csproj", "{2F16D1B5-D7B5-49F5-9A5C-7BE293C52AFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizer_DataAccess", "Organizer_DataAccess\Organizer_DataAccess.csproj", "{897820CE-E128-40E3-91CD-39631546CAC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFA3D4F3-543A-4EB7-8A4B-A2237F65784B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA3D4F3-543A-4EB7-8A4B-A2237F65784B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA3D4F3-543A-4EB7-8A4B-A2237F65784B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA3D4F3-543A-4EB7-8A4B-A2237F65784B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F16D1B5-D7B5-49F5-9A5C-7BE293C52AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F16D1B5-D7B5-49F5-9A5C-7BE293C52AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F16D1B5-D7B5-49F5-9A5C-7BE293C52AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F16D1B5-D7B5-49F5-9A5C-7BE293C52AFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897820CE-E128-40E3-91CD-39631546CAC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897820CE-E128-40E3-91CD-39631546CAC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897820CE-E128-40E3-91CD-39631546CAC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897820CE-E128-40E3-91CD-39631546CAC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

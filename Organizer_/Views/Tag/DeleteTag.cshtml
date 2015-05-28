@@ -1,0 +1,31 @@
+﻿@model Organizer_Domain.EntityModel.Tag
+
+@{
+    ViewBag.Title = "Видалити";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Видалити</h2>
+<h3>Ви впевнені, що хочете це видалити?</h3>
+<div>
+    <h4>Теги</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Видалити" class="btn btn-default" /> |
+            <a class="btn btn-default" href="@Url.Action("Index", "Tag" )">Повернутись до списку</a>
+        </div>
+    }
+</div>

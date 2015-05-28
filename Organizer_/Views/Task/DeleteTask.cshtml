@@ -1,0 +1,62 @@
+﻿@model Organizer_Domain.EntityModel.Task
+
+@{
+    ViewBag.Title = "Контакти";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Видалити</h2>
+<div>
+    <h4>Завдання</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Пріорітет
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priority.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Body)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateEnd)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Видалити" class="btn btn-default" /> |
+            <a class="btn btn-default" href="@Url.Action("Index", "Task" )">Повернутись до списку</a>
+        </div>
+    }
+</div>

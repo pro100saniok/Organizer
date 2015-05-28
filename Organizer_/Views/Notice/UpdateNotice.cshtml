@@ -1,0 +1,46 @@
+﻿@model Notice
+
+@{
+    ViewBag.Title = "Нотатки";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Нотатки</h3>
+
+@using (Html.BeginForm("UpdateNotice", "Notice", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Body, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(m => m.Body, new { @class = "form-control", style = "height:250px;" })
+                @Html.ValidationMessageFor(m => m.Body)
+            </div>
+        </div>
+        @Html.HiddenFor(m => m.Id)
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Додати" />
+            </div>
+        </div>
+        <div>
+            @Html.LabelFor(x => x.SelectedTags)
+            @Html.ListBoxFor(x => x.SelectedTags, Model.Tags)
+        </div>
+ 
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

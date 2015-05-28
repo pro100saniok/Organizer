@@ -1,0 +1,91 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IEnumerable<Organizer_Domain.EntityModel.Contact>
+@{
+    ViewBag.Title = "Контакти";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@ViewBag.Title</h2>
+<p>
+    <a class="btn btn-default" href="@Url.Action("UpdateContact", "Contacts")">Додати</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.House)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apartment)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.MiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.House)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Apartment)
+            </td>
+            <td>
+                <a class="btn btn-default" href="@Url.Action("UpdateContact", "Contacts", new { id = item.ContactId })">Змінити</a>
+                <a class="btn btn-default" href="@Url.Action("Details", "Contacts", new { id = item.ContactId })">Відкрити</a>
+                <a class="btn btn-default" href="@Url.Action("DeleteContact", "Contacts", new { id = item.ContactId })">Видалити</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="pagedList">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.PageNumbersOnly)
+</div>

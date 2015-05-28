@@ -1,0 +1,73 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model  IEnumerable<Organizer_Domain.EntityModel.Task>
+
+@{
+    ViewBag.Title = "Завдання";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    <a class="btn btn-default" href="@Url.Action("CreateTask", "Task")">Додати</a>
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Виберіть пріорітет: @Html.DropDownList("SelectedDepartment", "Всі" )
+        <input class="btn btn-default" type="submit" value="Фільтр" />
+    </p>
+}
+<p>
+    <a class="btn btn-default" href="@Url.Action("Index", "TaskPriority")">Змінити пріорітети</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Body)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateEnd)
+        </th>
+        <th>
+            Важливість
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Priority.Name)
+            </td>
+            <td>
+                <a class="btn btn-default" href="@Url.Action("UpdateTask", "Task", new { id = item.TaskId })">Змінити</a>
+
+                <a class="btn btn-default" href="@Url.Action("DeleteTask", "Task", new { id = item.TaskId })">Видалити</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="pagedList">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.PageNumbersOnly)
+</div>

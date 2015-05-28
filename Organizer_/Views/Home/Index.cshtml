@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Головна";
+}
+@Styles.Render("~/Content/clock")
+@Scripts.Render("~/bundles/clock")
+
+@*@Scripts.Render("~/Content/calendar")
+@Scripts.Render("~/bundles/calendar")*@
+
+
+<div class="jumbotron">
+    <div id="retroclockbox_lg" style="text-align: center ;">
+
+    </div>
+</div>
+<script>
+    jQuery(function ($) {
+        $('#retroclockbox_lg').flipcountdown({ size: 'lg' });
+    })
+</script>
+<br />
+<div style="height: 350px; width: 600px; display: inline-block; margin:auto;  margin-left: 250px;  ">@*<div class="demo" style="margin:0 auto; float: left;"></div>*@
+    
+    <div id="z" style="margin:0 auto; float: left;"></div>
+<img style=" display:block; float: right;" src="~/Content/img/organaizer.jpg" /></div>
+
+<script type="text/javascript">
+  
+        $(document).ready(function () {
+            $("#z").datetimepicker({
+                 language: 'ua',
+                //format: 'yyyy-mm-dd hh:ii',
+                autoclose: true,
+                todayBtn: true,
+                format: 'yyyy-mm-dd',
+                startDate: new Date()
+            });
+        });
+    
+</script>

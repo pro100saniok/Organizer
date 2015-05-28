@@ -1,0 +1,65 @@
+﻿@model Organizer_Domain.EntityModel.Task
+@{
+    ViewBag.Title = "Завдання";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateTask", "Task", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Завдання</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Body, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Body, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Body)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateStart, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DateStart, new { @class = "form-control form_datetime", placeholder = "Введіть початкову дату...",data_format = "dd/MM/yyyy HH:mm" })
+                @Html.ValidationMessageFor(model => model.DateStart)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateEnd, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DateEnd, new { @class = "form-control form_datetime", placeholder = "Введіть кінцеву дату..." })
+                @Html.ValidationMessageFor(model => model.DateEnd)
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="TaskPriorityId">Важливість</label>
+            <div class="col-md-10">
+                @Html.DropDownList("TaskPriorityId", String.Empty)
+                @Html.ValidationMessageFor(model => model.TaskPriorityId)
+            </div>
+        </div>
+        @Html.HiddenFor(model => model.TaskId)
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Додати" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Повернутись до списку", "Index")
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
