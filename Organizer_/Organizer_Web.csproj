@@ -159,11 +159,18 @@
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\organaizer.jpg" />
+    <Content Include="Content\img\bg2.jpg" />
     <Content Include="Content\img\digit-lg.png" />
     <Content Include="Content\img\digit-md.png" />
     <Content Include="Content\img\digit-sm.png" />
     <Content Include="Content\img\digit-xs.png" />
-    <Content Include="Content\img\organaizer.jpg" />
+    <Content Include="Content\img\bg.jpg" />
+    <Content Include="Content\img\intro-pic.jpg" />
+    <Content Include="Content\img\organaizer2.jpg" />
+    <Content Include="Content\img\slide-1.jpg" />
+    <Content Include="Content\img\slide-2.jpg" />
+    <Content Include="Content\img\slide-3.jpg" />
     <Content Include="Content\jquery.flipcountdown.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
@@ -272,6 +279,7 @@
     <Content Include="Views\Tag\Index.cshtml" />
     <Content Include="Views\Tag\UpdateTag.cshtml" />
     <Content Include="Views\Tag\DeleteTag.cshtml" />
+    <Content Include="Views\Shared\_LogoutPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

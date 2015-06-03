@@ -27,7 +27,7 @@ namespace Organizer_.Controllers
         public PartialViewResult CreateNotice()
         {
             //return new model for create new article.
-            return PartialView("UpdateNotice", model: new Notice());
+            return PartialView("UpdateNotice", model: new Organizer_Domain.EntityModel.Notice());
         }
 
         public ActionResult UpdateNotice(int id)
