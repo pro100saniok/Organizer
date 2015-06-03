@@ -3,10 +3,13 @@
 @{
     ViewBag.Title = "Реєстрація";
 }
+<hr>
+<h2 class="intro-text text-center">
+    <strong>Реєстрація</strong>
+</h2>
+<hr>
 
-<h3>Реєстрація</h3>
-
-@using (Html.BeginForm("Register", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using(Html.BeginForm("Register", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)

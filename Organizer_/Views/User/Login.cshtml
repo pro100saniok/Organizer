@@ -3,9 +3,12 @@
 @{
     ViewBag.Title = "Ввійти";
 }
-
-<h3>Ввійти</h3>
-
+ 
+<hr>
+<h2 class="intro-text text-center">
+    <strong>Ввійти</strong>
+</h2>
+<hr>
 @using (Html.BeginForm("Login", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
